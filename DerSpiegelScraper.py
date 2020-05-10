@@ -36,6 +36,11 @@ for cat in category:
             article_num +=1
 
 if 'data' not in os.listdir():          
+    #create a folder
     !mkdir data
+    #Convert my_dict to DataFrame
     df = pd.DataFrame.from_dict(data=my_dict, orient='index')
-    df.to_csv('data/DerSpiegel.csv', index=False)
+    # Drop duplicate articles
+    df2 = df.drop_duplicates(subset='title', keep='first')
+    # Save as csv as utf-16 due to spicial German charachters
+    df.to_csv('data/DerSpiegel.csv', index=False, encoding = 'utf-16')
