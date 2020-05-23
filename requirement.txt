@@ -1,10 +1,8 @@
 flask
 gunicorn
-itsdangerous
 Jinja2
-MarkupSafe
 Werkzeug
 keras
-tensorflow-gpu
+tensorflow
 numpy
 scipy
